@@ -164,6 +164,9 @@ class EditObjectPage extends React.Component {
         return objects
     }
     componentDidMount() {
+        if(!localStorage.getItem("token")){
+            window.location.href = "/login"
+        }
         this.LoadObjects().then(r => {
             var object_for_edit = r.filter(object => object.id == this.state.object_id)[0]
             var images = object_for_edit.img_srcs
@@ -183,7 +186,8 @@ class EditObjectPage extends React.Component {
                 description: object_for_edit.description,
                 images: images,
                 priceFrom: object_for_edit.low_price,
-                priceTo: object_for_edit.high_price
+                priceTo: object_for_edit.high_price,
+                token: localStorage.getItem("token")
             })
         })
 

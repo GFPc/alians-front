@@ -111,7 +111,9 @@ class CreateObjectPage extends React.Component{
             low_price: price_from,
             high_price: price_to,
             features: this.state.features,
-            contacts: this.state.contacts
+            contacts: this.state.contacts,
+            specifications: this.state.specifications,
+            token: localStorage.getItem("token")
         }
         GetData(API_LINK + "/admin/object/create", data).then(
             (response) => {
@@ -161,10 +163,16 @@ class CreateObjectPage extends React.Component{
         })
     }
     async DeleteObject(object_id){
-        await GetData(API_LINK+"/admin/object/delete",{object_id:object_id},"post")
+        var resp = await GetData(API_LINK+"/admin/object/delete",{object_id:object_id,token:localStorage.getItem("token")},"post")
+        if (resp.status === "unauthorized"){
+            window.location.href = "/login"
+        }
         this.LoadObjects()
     }
     componentDidMount() {
+        if(!localStorage.getItem("token")){
+            window.location.href = "/login"
+        }
         this.LoadObjects()
     }
 
