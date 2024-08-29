@@ -1,0 +1,83 @@
+.header{
+    display: inline-flex;
+    align-items: center;
+    height: 60px;
+
+}
+
+.header .header-block{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: inline-flex;
+}
+
+.header .header-block .header-org-title{
+    font-family: 'Open Sans', serif;
+    font-size: 16px;
+    margin-left: 2%;
+}
+.header .header-block a{
+    margin-left: 2%;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    margin-left: 27px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 1px;
+}
+.header .header-block a:first-child{
+    margin-left: 0;
+}
+.header .header-block a:hover{
+    border-bottom: 1px solid black;
+    animation: slowly-border 1s ease-in-out infinite;
+}
+@keyframes slowly-border {
+    0% {
+        border-bottom: 1px solid white;
+    }
+    50% {
+        border-bottom: 1px solid black;
+    }
+    100% {
+        border-bottom: 1px solid white;
+    }
+}
+
+.header .menu-icon{
+    padding: 10px;
+}
+.header .menu-content{
+    z-index: 2;
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    background: #FFFFFF;
+    border-radius: 10px 0 10px 10px;
+    padding: 10px;
+    user-select: none;
+}
+.header .menu-content div{
+    display: block;
+    background: #ececec;
+    padding: 10px;
+    border-radius: 10px;
+}
+.header .menu-content div:not(:first-child){
+
+    margin-top: 5px;
+}
+.header .menu-content div:hover{
+    background: #d9d9d9;
+    cursor: pointer;
+}
+.header .menu-content a{
+    margin-left: 27px;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 1px;
+}

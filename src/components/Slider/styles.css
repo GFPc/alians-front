@@ -1,0 +1,113 @@
+.slider {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  /* DOTS */
+  /* ARROWS */
+}
+.slider .slide-list {
+  display: flex;
+  border-radius: 40px;
+  width: 100%;
+}
+.slider .slide-list .slide {
+  flex: 1 0 100%;
+  position: relative;
+  border-radius: 40px;
+  width: 100%;
+}
+.slider .slide-list .slide .slide-image {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 40px;
+  width: 100%;
+  object-fit: contain;
+}
+.slider .slide-list .slide .slide-title {
+  text-align: center;
+  margin-top: 10px;
+}
+.slider .dots {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+.slider .dots .dot {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  height: 10px;
+  margin: 5px;
+  width: 10px;
+}
+.slider .dots .dot:hover {
+  cursor: pointer;
+}
+.slider .dots .dot.selected {
+  background-color: #004680;
+}
+.slider .arrows {
+  color: white;
+  display: flex;
+  font-size: 30px;
+  justify-content: space-between;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+.slider .arrows .delete-arrow {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
+.slider .arrows .delete-arrow:hover {
+  cursor: pointer;
+}
+.slider .arrows .arrow {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*
+  &.left:hover {
+    background-color: rgba(225, 127, 127, 0.5);
+  }*/
+}
+.slider .arrows .arrow:hover {
+  cursor: pointer;
+}
+.slider .arrows .arrow.left {
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  align-items: center;
+  display: flex;
+}
+.slider .arrows .arrow.left img {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+.slider .arrows .arrow.left:hover img {
+  display: flex;
+}
+.slider .arrows .arrow.right {
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+  display: flex;
+}
+.slider .arrows .arrow.right img {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+.slider .arrows .arrow.right:hover img {
+  display: flex;
+}
+
+/*# sourceMappingURL=styles.css.map */
