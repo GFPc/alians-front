@@ -3,7 +3,7 @@ import './Header.css'
 
 const link_About = "/#about"
 const link_Objects = "/#objects"
-const link_News = "/#news"
+const link_News = "/news"
 const link_Contacts = "/#contacts"
 
 const isMobile = () => {
@@ -37,7 +37,7 @@ const Header = () => {
 
                 }}>Контакты</a>
             </div>
-            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} style={{ display: isMobile() ? "block" : "none" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M3 18H21" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M3 6H21" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

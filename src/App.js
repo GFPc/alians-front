@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Home/HomePage';
-import CreateObjectPage from "./pages/CreateObject/CreateObjectPage";
+import HomePage from './pages/User/Home/HomePage';
+import CreateObjectPage from "./pages/Admin/CreateObject/CreateObjectPage";
 import TestPage from "./pages/Test/TestPage";
-import EditObjectPage from "./pages/EditObject/EditObjectPage";
-import ObjectPage from "./pages/Object/ObjectPage";
-import LoginPage from "./pages/Login/LoginPage";
+import EditObjectPage from "./pages/Admin/EditObject/EditObjectPage";
+import ObjectPage from "./pages/User/Object/ObjectPage";
+import LoginPage from "./pages/Admin/Login/LoginPage";
+import NewsPage from "./pages/User/News/News";
+import CreateNewsPage from "./pages/Admin/CreateNews/CreateNewsPage";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path={"/object/:object_id"} element={<ObjectPage />} />
           <Route path={"/test"} element={<TestPage />} />
           <Route path={"/login"} element={<LoginPage />} />
+        <Route path={"/admin/news/create"} element={<CreateNewsPage />} />
+        <Route path={"/news"} element={<NewsPage />} />
       </Routes>
     </BrowserRouter>
   );

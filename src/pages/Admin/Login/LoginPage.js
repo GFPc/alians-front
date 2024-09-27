@@ -1,6 +1,6 @@
 import React from 'react';
 import './LoginPageStyle_0.css';
-import {API_LINK, GetData} from "../../tools/api";
+import {API_LINK, GetData} from "../../../tools/api";
 
 import {sha256} from 'crypto-hash';
 class LoginPage extends React.Component {

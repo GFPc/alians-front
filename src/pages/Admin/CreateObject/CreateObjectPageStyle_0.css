@@ -1,0 +1,275 @@
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #bdbdbd;
+}
+
+.content .block-3 {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 50px;
+    background: #192537;
+}
+.content .block-3 .block-header{
+    font-family: 'Open Sans', serif;
+    font-size: 36px;
+    color: white;
+    display: block;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.content .block-3 .container{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+.content .block-3 .photos-section, .content .block-3 .info-section{
+    display: inline-block;
+    width: 100%;
+    justify-content: center;
+}
+.content .block-3 .photo-widget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 800px;
+}
+.content .block-3 .info-section{
+    display: inline-block;
+
+}
+
+
+.content .block-3 .info-section input{
+    background: #192537;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    cursor: text;
+    border: none;
+    color: white;
+}
+.content .block-3 .info-section span{
+    background: #192537;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    cursor: default;
+}
+.content .block-3 .info-section input:focus{
+    outline: none;
+}
+
+.content .block-3 .info-section #input-name{
+    display: block;
+    font-size: 24px;
+}
+.content .block-3 .price-range-title{
+    margin-top: 18px;
+    display: block;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+.content .block-3 .price-group{
+    margin-top: 10px;
+}
+.content .block-3 .price-group span{
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 6px;
+}
+.content .block-3 .price-group .price-range{
+    font-size: 16px;
+    font-weight: 100;
+}
+#input-price-from,#input-price-to{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 3000;
+}
+
+
+.content .block-3 .technical-features-title, .content .block-3 .contacts-title{
+    margin-top: 18px;
+    display: block;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+.content .block-3 .feature, .content .block-3 .contact{
+    margin-top: 10px;
+}
+.content .block-3 .technical-features-group, .content .block-3 .contacts-group{
+    margin-top: 10px;
+    display: block;
+    
+    align-items: center;
+}
+.content .block-3 .technical-features-group input{
+
+}
+.content .block-3 .technical-features-group form, .content .block-3 .contacts-group form, .content .block-3 .specifications-group form{
+    display: inline-flex;
+}
+.content .block-3 .technical-features-group span, .content .block-3 .contacts-group span, .content .block-3 .specifications-group span{
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 6px;
+}
+.content .block-3 .technical-features-group .delete-btn, .content .block-3 .contacts-group .delete-btn,.content .block-3 .specifications-group .delete-btn{
+    background: #ff8484;
+    margin-left: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 20px;
+}
+.content .block-3 .add-feature-btn, .content .block-3 .add-contact-btn{
+    background: transparent;
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    border-radius: 20px;
+    margin-left: 100px;
+}
+.content .block-3 .add-feature-btn svg, .content .block-3 .add-contact-btn svg{
+    fill: #7ace72;
+    height: 32px;
+    width: 32px;
+}
+.content .block-3 .description{
+    margin-top: 10px;
+    display: flex;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+
+}
+.content .block-3 .description textarea{
+    background: #3a4259;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    cursor: text;
+    border: none;
+    color: white;
+    resize: none;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+}
+.content .block-3 .description textarea:focus{
+    outline: none;
+}
+.content .block-3 .description-title{
+    margin-top: 18px;
+    display: block;
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+.content .block-3 .submit-btn{
+    background: #7ace72;
+    margin-top: 10px;
+    cursor: pointer;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+}
+.content .block-3 .submit-btn:hover{
+    background: #61aefb;
+    cursor: pointer;
+}
+.content .block-3 .submit-btn span{
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: white;
+}
+
+
+.content .block-4, .content .block-5{
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 50px;
+}
+.content .block-4 .block-header, .content .block-5 .block-header{
+    font-family: 'Open Sans', serif;
+    font-size: 36px;
+    align-self: center;
+    text-align: center;
+    display: block;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.content .block-4 .manage-objects, .content .block-5 .manage-objects{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.content .block-4 .delete-object, .content .block-5 .delete-object{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.content .block-4 .delete-object-container{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #646464;
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.content .block-4 .delete-object-name{
+    font-family: 'Open Sans';
+    font-size: 18px;
+
+    margin-left: 10px;
+}
+.content .block-4 .delete-icon{
+    fill: white;
+    background: #c25454;
+    display: flex;
+    margin-left:10px;
+    border-radius: 40px;
+}
+.content .block-4 .delete-icon:hover{
+    fill: white;
+    background: #ff8484;
+    display: flex;
+    margin-left:10px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.content .block-5 .manage-objects a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Open Sans';
+    font-size: 18px;
+}
+.content .block-5 .manage-objects .manage-object-container {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #646464;
+    display: inline-flex;
+}
+.content .block-5 .manage-objects .manage-object-container:hover{
+    border: 1px solid #7ace72;
+    cursor: pointer;
+}
