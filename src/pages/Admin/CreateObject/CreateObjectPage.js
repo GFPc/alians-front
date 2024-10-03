@@ -154,10 +154,6 @@ class CreateObjectPage extends React.Component{
     async LoadObjects() {
         var objects =  await GetData(API_LINK+"/objects","","get")
 
-        for (var i = 0; i < objects.length; i++) {
-            objects[i].img_srcs = await GetData(API_LINK+"/src/img",{id_list:objects[i].images.id_list},"post")
-        }
-
         this.setState({
             objects: objects
         })
@@ -333,6 +329,24 @@ class CreateObjectPage extends React.Component{
                                                 <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM23 15h-6v-6c0-0.552-0.448-1-1-1s-1 0.448-1 1v6h-6c-0.552 0-1 0.448-1 1s0.448 1 1 1h6v6c0 0.552 0.448 1 1 1s1-0.448 1-1v-6h6c0.552 0 1-0.448 1-1s-0.448-1-1-1z"/>
                                             </svg>
                                         </div>
+                                    </div>
+                                    <div className="type-group" style={{marginTop: "20px"}}>
+                                        <span className={"title"} style={{marginRight: "10px"}}>
+                                            Тип
+                                        </span>
+                                        <span>
+                                            <select id="input-type" style={{
+                                                outline: "none",
+                                                background: "none",
+                                                color: "#fff",
+                                                borderRadius: "5px",
+                                                border: "1px solid #fff",
+                                                padding: "5px",
+                                            }} onChange={(e) => {this.setState({type: e.target.value})}}>
+                                                <option value="0" style={{ color: "#fff",background: "#000"}}>Коммерческий</option>
+                                                <option value="1" style={{ color: "#fff",background: "#000"}}>Жилой</option>
+                                            </select>
+                                        </span>
                                     </div>
 
                                 </div>

@@ -15,7 +15,8 @@ class HomePage extends React.Component {
             objects: [],
             modalImage: null,
             modalOpen: false,
-            isMobile: false
+            isMobile: false,
+            type: "commercial",
         }
         this.LoadObjects = this.LoadObjects.bind(this)
     }
@@ -29,7 +30,7 @@ class HomePage extends React.Component {
         this.LoadObjects()
     }
     async LoadObjects() {
-        var objects =  await GetData(API_LINK+"/objects","","get")
+        var objects =  await GetData(API_LINK+"/objects",{"filter":this.state.type},"post")
         this.setState({
             objects: objects
         })
@@ -116,6 +117,20 @@ class HomePage extends React.Component {
                     <div className="block-1">
                         <div className="block-header">
                             <span>Наши объекты</span>
+                        </div>
+                        <div className="objects-type-switcher">
+                            <div className={(this.state.type === "commercial") ? " switcher-btn-active" : "switcher-btn"} onClick={() => {
+                                this.setState({type: "commercial"})
+                                this.LoadObjects()
+                            }}>
+                                <span>Коммерческие</span>
+                            </div>
+                            <div className={(this.state.type === "residential") ? " switcher-btn-active" : "switcher-btn"} onClick={() => {
+                                this.setState({type: "residential"})
+                                this.LoadObjects()
+                            }}>
+                                <span>Жилые</span>
+                            </div>
                         </div>
                         <div className="objects-container">
                             <div className="objects" id={"objects"}>

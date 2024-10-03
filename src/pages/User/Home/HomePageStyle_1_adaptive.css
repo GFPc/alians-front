@@ -99,4 +99,13 @@
         height: 100px;
         object-fit:scale-down;
     }
+    .content .block-1 .objects-type-switcher{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: auto;
+    }
+    .content .block-1 .switcher-btn,.content .block-1 .switcher-btn-active{
+        margin-top: 10px;
+    }
 }

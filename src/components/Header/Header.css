@@ -81,3 +81,65 @@
     color: black;
     padding-bottom: 1px;
 }
+.header .menu-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.9;
+    user-select: none;
+    z-index: 2;
+}
+.header .menu-screen .top{
+    display: flex;
+    align-items: center;
+}
+.header .menu-screen .top .logo{
+    padding: 7px;
+}
+.header .menu-screen .top .phone{
+    padding: 7px;
+    font-family: 'Open Sans', serif;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.header .menu-screen .group{
+    display: flex;
+    align-items: center;
+}
+.header .menu-screen .sub-group{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.header .menu-screen .group a{
+    font-family: 'Open Sans', serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 1px;
+}
+.header .menu-screen .middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: calc(100% - 160px);
+}
+.header .menu-screen .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .menu-screen .bottom .icon{
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}

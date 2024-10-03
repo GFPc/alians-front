@@ -28,7 +28,7 @@ class NewsPage extends React.Component{
                 for(let i = 0; i < news.length; i++){
                     GetData(API_LINK+"/news/img",{id:news[i].id},"post").then((r)=>{
                         news[i].img = r
-                        var old_news = this.state.news.find( (news) => news.id === news.id )
+                        var old_news = this.state.news.find( (x) => x.id === news[i].id )
                         var new_news = [...this.state.news]
                         new_news[new_news.indexOf(old_news)] = news[i]
                         this.setState({news:new_news})
@@ -86,7 +86,7 @@ class NewsPage extends React.Component{
                                                         width={600}
                                                         height={600}
                                                         style={{
-                                                            borderRadius: "40px",
+                                                            borderRadius: this.isMobile() ? "10px" : "40px",
                                                             maxWidth: "600px",
                                                         }}
                                                     >
@@ -97,7 +97,7 @@ class NewsPage extends React.Component{
                                                         }
                                                         {
                                                             item.img.map((img) => (
-                                                                <SwiperSlide><img src={img} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
+                                                                <SwiperSlide><img src={img} className={"news-img"} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
                                                             ))
                                                         }
                                                     </Swiper> :<div style={{

@@ -2,7 +2,16 @@ import React from 'react';
 import './LoginPageStyle_0.css';
 import {API_LINK, GetData} from "../../../tools/api";
 
-import {sha256} from 'crypto-hash';
+import Cryptojs from 'crypto-js';
+function getSHA256Text(data){
+    const sha256Data = Cryptojs.SHA256(data);
+    //creates hash object for data using SHA256
+
+    const sha256Text = sha256Data.toString();
+    //converts hash object to string
+
+    return sha256Text;
+}
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
@@ -14,9 +23,10 @@ class LoginPage extends React.Component {
         }
     }
     async Auth() {
+        //console.log(this.state.password)
         var data = {
             username: this.state.username,
-            password: await sha256(this.state.password)
+            password: getSHA256Text(this.state.password)
         }
         this.setState({loading: true})
 
