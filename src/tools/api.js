@@ -1,6 +1,6 @@
 import axios from "axios";
 //147.45.147.209
-const API_LINK = "http://localhost:5000"
+const API_LINK = "http://147.45.147.209:5000"
 
 const delay_t = ms => new Promise(
     resolve => setTimeout(resolve, ms)
