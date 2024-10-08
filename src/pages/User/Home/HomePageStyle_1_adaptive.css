@@ -95,8 +95,7 @@
     .slider .slide-list .slide{
         flex: 0;
         float: left;
-        width:  100px;
-        height: 100px;
+        width: 100%;
         object-fit:scale-down;
     }
     .content .block-1 .objects-type-switcher{

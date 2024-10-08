@@ -8,6 +8,7 @@ import ObjectPage from "./pages/User/Object/ObjectPage";
 import LoginPage from "./pages/Admin/Login/LoginPage";
 import NewsPage from "./pages/User/News/News";
 import CreateNewsPage from "./pages/Admin/CreateNews/CreateNewsPage";
+import Objects from "./pages/User/Objects/Objects";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path={"/login"} element={<LoginPage />} />
         <Route path={"/admin/news/create"} element={<CreateNewsPage />} />
         <Route path={"/news"} element={<NewsPage />} />
+        <Route path={"/objects/:type"} element={<Objects />} />
       </Routes>
     </BrowserRouter>
   );

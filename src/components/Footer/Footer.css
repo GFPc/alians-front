@@ -60,3 +60,10 @@
         box-shadow: 0 0 0 2px #343434;
     }
 }
+@media (max-width: 900px) {
+    .footer .column-last{
+        float: right;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
