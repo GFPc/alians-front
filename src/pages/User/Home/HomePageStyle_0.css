@@ -618,5 +618,8 @@
     .content .block-last-commercial-objects .object{
         min-width: initial;
     }
+    .content .block-last-commercial-objects .object .price{
+        font-size: 20px;
+    }
 
 }

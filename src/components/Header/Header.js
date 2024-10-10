@@ -34,7 +34,7 @@ const Header = () => {
                     <div className="links">
                         <div className="group">
                             <div className="text">
-                                <a href={link_About}>О компании</a>
+                                <a href={link_About}>Главная</a>
                             </div>
                             <div className="arrow">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@ const Header = () => {
                         </div>
                         <div className="group">
                             <div className="text">
-                                <a href={link_Contacts}>Контакты</a>
+                                <a href={link_Contacts} onClick={ () => setMenuOpen(false)}>Контакты</a>
                             </div>
                             <div className="arrow">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

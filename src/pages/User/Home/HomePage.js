@@ -45,7 +45,9 @@ class HomePage extends React.Component {
                 * for(var j = 0; j < objects[i].images.id_list.length; j++) {
                     objects[i].images.id_list[j] = "mobile_" + objects[i].images.id_list[j]
                 }*/
+                console.log(objects[i].images.id_list.length)
                 objects[i].img_srcs = await GetData(API_LINK+"/src/img",{id_list:objects[i].images.id_list},"post")
+
                 for(var j = 0; j < objects[i].img_srcs.length; j++) {
                     objects[i].img_srcs[j] = {
                         description:objects[i].img_srcs[j].id,
@@ -70,6 +72,7 @@ class HomePage extends React.Component {
                 objects: objects
             })
         }
+        console.log(objects)
     }
     async LoadNews() {
         GetData(API_LINK + "/news",{"start":0,"count":10},"post")
@@ -129,7 +132,7 @@ class HomePage extends React.Component {
                             <span className={"about-title"}>Альянс Строй</span>
                             <span className="about-text">Компания "Альянс Строй" - это ведущая строительная организация, которая специализируется на реализации разнообразных проектов в области строительства и ремонта. Мы предлагаем широкий спектр услуг и гарантируем высокое качество исполнения всех работ.</span>
                             <span className="about-text">Наша компания имеет богатый опыт работы на строительном рынке, что позволяет нам успешно реализовывать как небольшие частные заказы, так и крупные коммерческие проекты. Мы готовы взяться за любую задачу и обеспечить клиентов надежными строительными решениями.</span>
-                            <div className="go-to-btn" onClick={() => document.getElementById("objects").scrollIntoView({behavior: "smooth"})}>
+                            <div className="go-to-btn" onClick={() => document.getElementById("block-last-commercial-objects-items").scrollIntoView({behavior: "smooth"})}>
                                 <span>Перейти к объектам</span>
                             </div>
                         </div>
@@ -141,7 +144,7 @@ class HomePage extends React.Component {
                         <div className="block-last-commercial-objects-title">
                             <span className="title">Последние коммерческие {this.isMobile() ? <br/> : <></>} объекты</span>
                         </div>
-                        <div className="block-last-commercial-objects-items">
+                        <div className="block-last-commercial-objects-items" id={"block-last-commercial-objects-items"}>
                             <CustomSlider
                                 items={[]}
                             >
