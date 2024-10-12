@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './Header.css'
 
-const link_About = "/#about"
+const link_About = "/"
 const link_Objects = "/objects"
 const link_News = "/news"
 const link_Contacts = "/#contacts"
@@ -131,7 +131,7 @@ const Header = () => {
                 display: isMobile() ? "none" : "flex"
             }}
             >
-                <a href={link_About}>О компании</a>
+                <a href={link_About}>Главная</a>
                 <a href={link_Objects}>Наши объекты</a>
                 <a href={link_News}>Новости</a>
                 <a href={"#"} onClick={() => {

@@ -169,7 +169,7 @@ class HomePage extends React.Component {
                                                             >
                                                                 {
                                                                     object.img_srcs.map((item, index) => (
-                                                                        <SwiperSlide><img src={item.url} alt="" onClick={() => this.setState({modalImage: item.url,modalOpen: true})}/></SwiperSlide>
+                                                                        <SwiperSlide><img src={item.url} style={{userSelect: "none"}} alt="" onClick={() => this.setState({modalImage: item.url,modalOpen: true})}/></SwiperSlide>
                                                                     ))
                                                                 }
                                                             </Swiper> :<div style={{
