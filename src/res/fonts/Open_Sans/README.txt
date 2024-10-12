@@ -1,9 +1,9 @@
-Open Sans Variable Font
+Circe-Regular Variable Font
 =======================
 
-This download contains Open Sans as both variable fonts and static fonts.
+This download contains Circe-Regular as both variable fonts and static fonts.
 
-Open Sans is a variable font with these axes:
+Circe-Regular is a variable font with these axes:
   wdth
   wght
 
@@ -13,7 +13,7 @@ This means all the styles are contained in these files:
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Open Sans:
+in those cases you can use the static font files for Circe-Regular:
   static/OpenSans_Condensed-Light.ttf
   static/OpenSans_Condensed-Regular.ttf
   static/OpenSans_Condensed-Medium.ttf

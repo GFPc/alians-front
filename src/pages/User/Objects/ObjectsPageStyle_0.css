@@ -15,7 +15,7 @@
     background: #192537;
 }
 .block-7 .block-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     display: block;
     margin-bottom: 20px;
@@ -60,7 +60,7 @@
 
 }
 .news-item-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 20px;
     display: inline-flex;
     font-weight: bold;
@@ -68,12 +68,12 @@
 }
 .news-item-date{
     display: inline-flex;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 18px;
     float: right;
 }
 .news-item-text{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: block;
     margin-top: 20px;
@@ -135,7 +135,7 @@
     }
     .news-item-title{
         all: initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 20px;
         display: block;
         width: 100%;
@@ -145,7 +145,7 @@
     }
     .news-item-date{
         all: initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 12px;
         display: block;
         width: 100%;
@@ -154,7 +154,7 @@
     }
     .news-item-text{
         all:initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 14px;
         display: block;
 

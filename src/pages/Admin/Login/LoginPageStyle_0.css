@@ -12,7 +12,7 @@
     border-radius: 20px;
 }
 .login-form .form-header{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 24px;
     display: block;
     margin-bottom: 20px;
@@ -38,7 +38,7 @@
     background: #FFFFFF;
     border: 1px solid #D9D9D9;
     border-radius: 10px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     padding: 10px 20px;
 }
@@ -48,7 +48,7 @@
 
 .form-btn{
     border-radius: 90px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: flex;
     justify-content: center;

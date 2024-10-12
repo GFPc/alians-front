@@ -20,19 +20,19 @@
 
 
 .block-6 .info-section .object-name{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 24px;
     display: block;
     margin-bottom: 10px;
 }
 .block-6 .info-section .object-address{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 18px;
     display: block;
     margin-bottom: 18px;
 }
 .block-6 .info-section .price-range-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: block;
     margin-top: 10px;
@@ -48,14 +48,14 @@
     margin-left: 10px;
 }
 .block-6 .technical-features-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 16px;
     display: block;
     color: #000000;
     margin-top: 18px;
 }
 .block-6 .feature-name{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display:  inline-block;
     margin-top: 6px;
@@ -63,7 +63,7 @@
     margin-left: 20px;
 }
 .block-6 .specifications-group .specification{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: block;
     margin-top: 6px;
@@ -71,7 +71,7 @@
     color: #555555;
 }
 .block-6 .contacts-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 16px;
     display: block;
     color: #000000;
@@ -79,7 +79,7 @@
     margin-top: 18px;
 }
 .block-6 .contact .contact-name{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: #555555;
     margin-top: 6px;
@@ -91,14 +91,14 @@
     margin: 0 5%;
 }
 .block-6 .description-title{
-    font-family: 'Open Sans';
+    font-family: 'Circe-Regular';
     font-size: 16px;
     display: block;
     color: #000000;
     margin-top: 30px;
 }
 .block-6 .description-group .description-text{
-    font-family: 'Open Sans';
+    font-family: 'Circe-Regular';
     font-size: 14px;
     display: block;
     color: #555555;

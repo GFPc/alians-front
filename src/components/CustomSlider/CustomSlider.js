@@ -42,11 +42,11 @@ const CustomSlider = function ({ children, items}) {
         const currentPosition = e.touches[0].clientX;
         const direction = touchPosition - currentPosition;
 
-        if (direction > 50) {
+        if (direction > 8) {
             changeSlide(1);
         }
 
-        if (direction < -50) {
+        if (direction < -8) {
             changeSlide(-1);
         }
 

@@ -10,6 +10,11 @@
     src:
      url('../../../res/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf')  format('truetype');
 }
+@font-face {
+    font-family: 'Circe-Regular';
+    src:
+            url('../../../res/fonts/CirceRegular.ttf')  format('truetype');
+}
 .page {
     width: 100%;
     height: 100%;
@@ -31,12 +36,12 @@
     background: #192537;
 }
 .content .block-0 .about-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     color: white;
 }
 .content .block-0 .about-text{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 16px;
     color: white;
     display: block;
@@ -48,7 +53,7 @@
     height: 40px;
     background: #FFFFFF;
     border-radius: 90px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: flex;
     justify-content: center;
@@ -95,7 +100,7 @@
     align-items: center;
 }
 .content .block-1 .block-header{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     align-self: center;
     text-align: center;
@@ -149,18 +154,18 @@
 }
 .content .block-last-commercial-objects .object-data .object-name, .block-1 .object-data .object-name{
     margin-top: 22px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 24px;
     display: block;
 }
 .content .block-last-commercial-objects .object-data .object-address, .block-1 .object-data .object-address{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: block;
     margin-top: 9px;
 }
 .content .block-last-commercial-objects .object-data .object-feature, .block-1 .object-data .object-feature{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-weight: 200;
     font-size: 14px;
     display: block;
@@ -171,7 +176,7 @@
     height: 45px;
     background: #DFFFD7;
     border-radius: 90px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: flex;
     justify-content: center;
@@ -183,7 +188,7 @@
     background: #4fe89b;
 }
 .content .block-last-commercial-objects .object-data .price, .block-1 .object-data .price{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     float: right;
     margin-right: 40px;
@@ -408,7 +413,7 @@
     margin-bottom: 20px;
 }
 .home-page .block-last-commercial-objects-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     display: flex;
     justify-content: center;
@@ -463,7 +468,7 @@
     background: #ececec;
 }
 .news-item-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 20px;
     display: inline-flex;
     font-weight: bold;
@@ -472,19 +477,19 @@
 }
 .news-item-date{
     display: inline-flex;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 18px;
     float: right;
     margin-top: 10px;
 }
 .news-item-text{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     display: block;
     margin-top: 10px;
 }
 .home-page .block-last-news .last-news-header{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     display: block;
     justify-content: center;
@@ -518,6 +523,29 @@
     border-radius: 20px;
     padding: 20px;
     margin: 20px;
+}
+.home-page .see-all-btn-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.home-page .see-all-btn{
+    font-family: 'Circe-Regular', serif;
+    font-size: 20px;
+    display: inline-flex;
+    float: left;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 40px;
+    border: 1px solid #000000;
+}
+.home-page .see-all-btn:hover{
+    background: #000;
+    color: white;
+
 }
 @media (max-width: 900px) {
     .home-page .news-content{
@@ -577,7 +605,7 @@
     }
     .news-item-title{
         all: initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 20px;
         display: block;
         width: 100%;
@@ -587,7 +615,7 @@
     }
     .news-item-date{
         all: initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 12px;
         display: block;
         width: 100%;
@@ -596,7 +624,7 @@
     }
     .news-item-text{
         all:initial;
-        font-family: 'Open Sans', serif;
+        font-family: 'Circe-Regular', serif;
         font-size: 14px;
         display: block;
 

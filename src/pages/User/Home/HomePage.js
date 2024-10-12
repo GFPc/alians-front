@@ -156,20 +156,15 @@ class HomePage extends React.Component {
                                                     <div>
                                                         { object.img_srcs ?
                                                             <Swiper
-                                                                touchReleaseOnEdges={true}
-                                                                touchMoveStopPropagation
+                                                                allowTouchMove={false}
                                                                 // install Swiper modules
-                                                                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                                                                navigation={(!this.isMobile())}
-                                                                spaceBetween={1}
-                                                                slidesPerView={1}
-                                                                pagination={{ clickable: true }}
-                                                                onSlideChange={() => console.log('slide change')}
+                                                                modules={[Navigation]}
+                                                                navigation={true}
                                                                 width={this.isMobile() ? 400 : 600}
                                                                 height={600}
                                                                 style={{
                                                                     borderRadius: "40px",
-
+                                                                    userSelect: "none",
                                                                 }}
                                                             >
                                                                 {
@@ -248,7 +243,11 @@ class HomePage extends React.Component {
                                 }
                             </CustomSlider>
                         </div>
-
+                        <div className="see-all-btn-wrapper">
+                            <div className="see-all-btn">
+                                <span>Смотреть больше</span>
+                            </div>
+                        </div>
                     </div>
                     <div className="block-last-news">
                         <div className="last-news-header">

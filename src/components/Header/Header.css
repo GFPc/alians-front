@@ -13,13 +13,13 @@
 }
 
 .header .header-block .header-org-title{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 16px;
     margin-left: 20px;
 }
 .header .header-block a{
     margin-left: 2%;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     margin-left: 27px;
     text-decoration: none;
@@ -75,7 +75,7 @@
 }
 .header .menu-content a{
     margin-left: 27px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     text-decoration: none;
     color: black;
@@ -101,7 +101,7 @@
 }
 .header .menu-screen .top .phone{
     padding: 7px;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 16px;
     color: white;
     display: flex;
@@ -119,7 +119,7 @@
     margin-left: 50px;
 }
 .header .menu-screen .group a{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 18px;
     text-decoration: none;
     color: white;

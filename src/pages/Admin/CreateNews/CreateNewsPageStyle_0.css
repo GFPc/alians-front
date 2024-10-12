@@ -38,7 +38,7 @@
 }
 
 .create-news-page .title,.text{
-    font-family: "Open Sans", sans-serif;
+    font-family: "Circe-Regular", sans-serif;
     font-size: 18px;
 
 }
@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 .create-news-page .create-btn span{
-    font-family: "Open Sans",serif;
+    font-family: "Circe-Regular",serif;
     font-size: 16px;
     padding: 10px 20px;
 }

@@ -10,7 +10,7 @@ textarea::-webkit-input-placeholder {
     background: #192537;
 }
 .content .block-3 .block-header{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     color: white;
     display: block;
@@ -43,7 +43,7 @@ textarea::-webkit-input-placeholder {
 
 .content .block-3 .info-section input{
     background: #192537;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     cursor: text;
     border: none;
@@ -51,7 +51,7 @@ textarea::-webkit-input-placeholder {
 }
 .content .block-3 .info-section span{
     background: #192537;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     cursor: default;
@@ -67,7 +67,7 @@ textarea::-webkit-input-placeholder {
 .content .block-3 .price-range-title{
     margin-top: 18px;
     display: block;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 10px;
@@ -76,7 +76,7 @@ textarea::-webkit-input-placeholder {
     margin-top: 10px;
 }
 .content .block-3 .price-group span{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 6px;
@@ -97,7 +97,7 @@ textarea::-webkit-input-placeholder {
 .content .block-3 .technical-features-title, .content .block-3 .contacts-title{
     margin-top: 18px;
     display: block;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 10px;
@@ -118,7 +118,7 @@ textarea::-webkit-input-placeholder {
     display: inline-flex;
 }
 .content .block-3 .technical-features-group span, .content .block-3 .contacts-group span, .content .block-3 .specifications-group span{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 6px;
@@ -146,7 +146,7 @@ textarea::-webkit-input-placeholder {
 .content .block-3 .description{
     margin-top: 10px;
     display: flex;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 10px;
@@ -154,7 +154,7 @@ textarea::-webkit-input-placeholder {
 }
 .content .block-3 .description textarea{
     background: #3a4259;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     cursor: text;
     border: none;
@@ -170,7 +170,7 @@ textarea::-webkit-input-placeholder {
 .content .block-3 .description-title{
     margin-top: 18px;
     display: block;
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
     margin-bottom: 10px;
@@ -193,7 +193,7 @@ textarea::-webkit-input-placeholder {
     cursor: pointer;
 }
 .content .block-3 .submit-btn span{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 14px;
     color: white;
 }
@@ -205,7 +205,7 @@ textarea::-webkit-input-placeholder {
     padding-bottom: 50px;
 }
 .content .block-4 .block-header, .content .block-5 .block-header{
-    font-family: 'Open Sans', serif;
+    font-family: 'Circe-Regular', serif;
     font-size: 36px;
     align-self: center;
     text-align: center;
@@ -236,7 +236,7 @@ textarea::-webkit-input-placeholder {
     align-items: center;
 }
 .content .block-4 .delete-object-name{
-    font-family: 'Open Sans';
+    font-family: 'Circe-Regular';
     font-size: 18px;
 
     margin-left: 10px;
@@ -259,7 +259,7 @@ textarea::-webkit-input-placeholder {
 .content .block-5 .manage-objects a{
     text-decoration: none;
     color: #000;
-    font-family: 'Open Sans';
+    font-family: 'Circe-Regular';
     font-size: 18px;
 }
 .content .block-5 .manage-objects .manage-object-container {
