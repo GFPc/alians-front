@@ -41,13 +41,13 @@
     text-shadow: 0 0 100px #FFFFFF;
     cursor: pointer;
 }
-.footer .column .icons img:hover{
+.footer .column .icons svg:hover{
     cursor: pointer;
     opacity: 0.7;
     border-radius: 50px;
     animation: animated-border-icons 1s ease-in-out infinite;
 }
-.footer .column .icons img:not(:last-child){
+.footer .column .icons svg:not(:last-child){
     margin-right: 10px;
 }
 
