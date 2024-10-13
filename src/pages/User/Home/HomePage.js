@@ -244,7 +244,7 @@ class HomePage extends React.Component {
                             </CustomSlider>
                         </div>
                         <div className="see-all-btn-wrapper">
-                            <div className="see-all-btn" onClick={()=>{ window.location.href = "/objects"}}>
+                            <div className="see-all-btn" onClick={()=>{ window.location.href = "/objects/commercial"}}>
                                 <span>Смотреть больше</span>
                             </div>
                         </div>

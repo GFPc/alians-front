@@ -44,7 +44,7 @@ const Header = () => {
                         </div>
                         <div className="group">
                             <div className="text">
-                                <a href={link_Objects}>Наши объекты</a>
+                                <a>Наши объекты</a>
                             </div>
                         </div>
                         <div className="group sub-group">
@@ -132,7 +132,7 @@ const Header = () => {
             }}
             >
                 <a href={link_About}>Главная</a>
-                <a href={link_Objects}>Наши объекты</a>
+                <a href={link_Objects + "/commercial"}>Наши объекты</a>
                 <a href={link_News}>Новости</a>
                 <a href={"#"} onClick={() => {
                     setMenuOpen(false)
