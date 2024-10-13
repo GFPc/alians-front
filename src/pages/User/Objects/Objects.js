@@ -17,6 +17,7 @@ class Objects extends React.Component {
             modalOpen: false,
             isMobile: false,
             type: window.location.href.split("/")[window.location.href.split("/").length - 1],
+            menuOpen: false
         }
         this.LoadObjects = this.LoadObjects.bind(this)
     }
@@ -76,9 +77,14 @@ class Objects extends React.Component {
                 </div>
             )
         }
-
+        if(this.state.menuOpen){
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
         return (
-            <div className="page">
+            <div className="page" style={{overflow: this.state.menuOpen ? "hidden" : "auto"}}>
                 <div className="modal" style={{
                     background: "rgba(0, 0, 0, 0.5)",
                     position: "fixed",
@@ -95,7 +101,7 @@ class Objects extends React.Component {
                 >
                     <img src={this.state.modalImage} alt=""/>
                 </div>
-                <Header />
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})} />
                 <div className="content">
                     <div className="block-1">
                         <div className="block-header">

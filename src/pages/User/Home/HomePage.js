@@ -19,7 +19,8 @@ class HomePage extends React.Component {
             modalOpen: false,
             isMobile: false,
             type: "commercial",
-            news: []
+            news: [],
+            menuOpen: false
         }
         this.LoadObjects = this.LoadObjects.bind(this)
         this.LoadNews = this.LoadNews.bind(this)
@@ -107,8 +108,14 @@ class HomePage extends React.Component {
 
             document.getElementById(element_id).scrollIntoView({behavior: "smooth"})
         }
+        if(this.state.menuOpen){
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
         return (
-            <div className="page home-page">
+            <div className="page home-page" style={{overflow: this.state.menuOpen ? "hidden" : "unset"}}>
                 <div className="modal" style={{
                     background: "rgba(0, 0, 0, 0.5)",
                     position: "fixed",
@@ -125,7 +132,7 @@ class HomePage extends React.Component {
                 >
                     <img src={this.state.modalImage} alt=""/>
                 </div>
-                <Header />
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})}/>
                 <div className="content">
                     <div className="block-0">
                         <div className="about" id={"about"}>

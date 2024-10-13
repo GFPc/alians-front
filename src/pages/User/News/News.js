@@ -14,7 +14,8 @@ class NewsPage extends React.Component{
             news: [
             ],
             modalOpen: false,
-            modalImage: null
+            modalImage: null,
+            menuOpen: false
         }
     }
     componentDidMount() {
@@ -41,7 +42,14 @@ class NewsPage extends React.Component{
             return true
         }
     }
+
     render() {
+        if(this.state.menuOpen){
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
         return (
             <div className="news-page page">
                 <div className="modal" style={{
@@ -60,7 +68,7 @@ class NewsPage extends React.Component{
                 >
                     <img src={this.state.modalImage} alt=""/>
                 </div>
-                <Header/>
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})}/>
 
                 <div className="content">
                     <div className="block-7">

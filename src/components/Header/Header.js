@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './Header.css'
+import ReactDOM from "react-dom/client";
 
 const link_About = "/"
 const link_Objects = "/objects"
@@ -9,15 +10,13 @@ const link_Contacts = "/#contacts"
 const isMobile = () => {
     return window.innerWidth < 768
 }
-const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
-
+const Header = ({menuOpen, setMenuOpen}) => {
     return (
         <div className="header">
-            <div className="menu-screen" style={{display: menuOpen ? "block" : "none"}}>
+            <div className="menu-screen" style={{display: menuOpen ? "block" : "none"}} onScroll={(e) => e.stopPropagation()}>
                 <div className="top">
                     <div className="logo" onClick={ () => window.location.href = "/"}>
-                        <img src={"company-logo.svg"} alt="" height={"40px"} width={"40px"}/>
+                        <img src={"/company-logo.svg"} alt="" height={"40px"} width={"40px"}/>
                     </div>
                     <div className="close-btn" onClick={ () => setMenuOpen(false)}>
                         <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">

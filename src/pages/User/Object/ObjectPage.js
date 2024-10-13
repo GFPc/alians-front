@@ -25,7 +25,8 @@ class ObjectPage extends React.Component {
 
             modalImageUrl: "",
             modalOpen: false,
-            dataReceived: false
+            dataReceived: false,
+            menuOpen: false
         }
     }
 
@@ -76,8 +77,14 @@ class ObjectPage extends React.Component {
                 </div>
             )
         }
+        if(this.state.menuOpen){
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
         return (
-            <div className="page">
+            <div className="page" style={{overflow: this.state.menuOpen ? "hidden" : "auto"}}>
                 <div className="modal"
                      style={{
                          background: "rgba(0, 0, 0, 0.5)",
@@ -103,7 +110,7 @@ class ObjectPage extends React.Component {
                     </div>
                     <div className="modal-close" onClick={() => this.setState({modalOpen: false})}>X</div>
                 </div>
-                <Header />
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})}/>
                 <div className="content">
                     <div className="block-6">
                         <div className="container">

@@ -82,7 +82,7 @@
     padding-bottom: 1px;
 }
 .header .menu-screen{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -90,7 +90,7 @@
     background: #000000;
     opacity: 0.9;
     user-select: none;
-    z-index: 2;
+    z-index: 3;
 }
 .header .menu-screen .top{
     display: flex;
@@ -126,11 +126,11 @@
     padding-bottom: 1px;
 }
 .header .menu-screen .middle{
+    height: calc(100% - 154px);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    height: calc(100% - 160px);
 }
 .header .menu-screen .bottom{
     display: flex;
