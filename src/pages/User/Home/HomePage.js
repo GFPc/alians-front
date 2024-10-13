@@ -244,7 +244,7 @@ class HomePage extends React.Component {
                             </CustomSlider>
                         </div>
                         <div className="see-all-btn-wrapper">
-                            <div className="see-all-btn">
+                            <div className="see-all-btn" onClick={()=>{ window.location.href = "/objects"}}>
                                 <span>Смотреть больше</span>
                             </div>
                         </div>
@@ -271,7 +271,8 @@ class HomePage extends React.Component {
                                                             slidesPerView={1}
                                                             pagination={{ clickable: true }}
                                                             onSlideChange={() => console.log('slide change')}
-                                                            width={this.isMobile()? window.innerWidth - 50 : 600}
+                                                            width={this.isMobile()? 400 : 600}
+                                                            autoHeight={true}
 
                                                             style={{
                                                                 borderRadius: this.isMobile() ? "10px" : "40px",
@@ -280,7 +281,7 @@ class HomePage extends React.Component {
                                                         >
                                                             {
                                                                 item.img.map((img) => (
-                                                                    <SwiperSlide><img src={img} className={"news-img"} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
+                                                                    <SwiperSlide style={{display: "flex",justifyContent: "center",alignItems: "center"}}><img src={img} className={"news-img"} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
                                                                 ))
                                                             }
                                                         </Swiper> :<div style={{
