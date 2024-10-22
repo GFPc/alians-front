@@ -76,7 +76,7 @@ class HomePage extends React.Component {
         console.log(objects)
     }
     async LoadNews() {
-        GetData(API_LINK + "/news",{"start":0,"count":10},"post")
+        GetData(API_LINK + "/news",{"start":0,"count":3},"post")
             .then((data) => {
                 var news = data
                 this.setState(
@@ -262,12 +262,19 @@ class HomePage extends React.Component {
                         </div>
                         <div className="center-aligner">
                             <div className="last-news-content">
+
                                 {this.state.news.map((item) => {
+                                    console.log(item)
                                     return (
 
                                         <div className="block-last-news-item-wrapper">
                                             <div className="block-last-news-item">
-                                                <div className="slider-container">
+                                                <div className="slider-container"
+                                                    style={{display: "flex",
+                                                        justifyContent: "center",
+                                                        alignItems: "center",
+                                                }}
+                                                >
                                                     { item.img ?
                                                         <Swiper
 
@@ -278,8 +285,8 @@ class HomePage extends React.Component {
                                                             slidesPerView={1}
                                                             pagination={{ clickable: true }}
                                                             onSlideChange={() => console.log('slide change')}
-                                                            width={this.isMobile()? 400 : 600}
-                                                            autoHeight={true}
+                                                            width={ this.isMobile() ? 300 : 600}
+
 
                                                             style={{
                                                                 borderRadius: this.isMobile() ? "10px" : "40px",
@@ -288,7 +295,7 @@ class HomePage extends React.Component {
                                                         >
                                                             {
                                                                 item.img.map((img) => (
-                                                                    <SwiperSlide style={{display: "flex",justifyContent: "center",alignItems: "center"}}><img src={img} className={"news-img"} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
+                                                                    <SwiperSlide style={{display: "flex",justifyContent: "center",alignItems: "center"}}><img style={{height: "100%",width: "100%"}} src={img} className={"news-img"} alt="" onClick={() => this.setState({modalImage: img,modalOpen: true})}/></SwiperSlide>
                                                                 ))
                                                             }
                                                         </Swiper> :<div style={{
@@ -351,6 +358,7 @@ class HomePage extends React.Component {
                                         </div>
                                     )
                                 })}
+
                             </div>
                         </div>
                     </div>

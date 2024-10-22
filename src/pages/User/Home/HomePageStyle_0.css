@@ -452,7 +452,7 @@
 .home-page .news-item-wrapper{
     background: #FFFFFF;
     border-radius: 20px;
-    padding: 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -460,7 +460,7 @@
     align-self: center;
 }
 .home-page .block-last-news-item{
-    margin: 20px auto;
+
     display: inline-block;
     border-radius: 45px;
     padding: 20px;
@@ -641,6 +641,7 @@
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
+        margin-bottom: 20px;
     }
     .content .block-last-commercial-objects .object{
         min-width: initial;
