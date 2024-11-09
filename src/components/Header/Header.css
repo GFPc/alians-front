@@ -2,7 +2,19 @@
     display: inline-flex;
     align-items: center;
     height: 60px;
-
+    background: #FFFFFF;
+    width: 100%;
+}
+.header-fixed{
+    position: fixed;
+}
+.header-scroll-up{
+    transition: 0.3s ease-in-out;
+    transform: translate3d(0,0,0);
+}
+.header-scroll-down{
+    transition: 0.2s ease-in-out;
+    transform: translateY(-100%) !important;
 }
 
 .header .header-block{
@@ -18,7 +30,6 @@
     margin-left: 20px;
 }
 .header .header-block a{
-    margin-left: 2%;
     font-family: 'Circe-Regular', serif;
     font-size: 14px;
     margin-left: 27px;

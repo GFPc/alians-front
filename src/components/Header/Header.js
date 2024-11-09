@@ -10,9 +10,9 @@ const link_Contacts = "/#contacts"
 const isMobile = () => {
     return window.innerWidth < 768
 }
-const Header = ({menuOpen, setMenuOpen}) => {
+const Header = ({menuOpen, setMenuOpen,scrollDirection}) => {
     return (
-        <div className="header">
+        <div className={isMobile() ? ( menuOpen ? "header" : "header header-scroll-"+scrollDirection) + (menuOpen ? "" : " header-fixed") : "header"}>
             <div className="menu-screen" style={{display: menuOpen ? "block" : "none"}} onScroll={(e) => e.stopPropagation()}>
                 <div className="top">
                     <div className="logo" onClick={ () => window.location.href = "/"}>

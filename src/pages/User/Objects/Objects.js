@@ -17,7 +17,9 @@ class Objects extends React.Component {
             modalOpen: false,
             isMobile: false,
             type: window.location.href.split("/")[window.location.href.split("/").length - 1],
-            menuOpen: false
+            menuOpen: false,
+            scrollDirection: "",
+            objectsImagesLoaded: {},
         }
         this.LoadObjects = this.LoadObjects.bind(this)
     }
@@ -32,44 +34,44 @@ class Objects extends React.Component {
     }
     async LoadObjects() {
         var objects =  await GetData(API_LINK+"/objects",{"filter":this.state.type},"post")
-        this.setState({
-            objects: objects
-        })
-        if(this.isMobile()) {
-            for (var i = 0; i < objects.length; i++) {
-                /*
-                * for(var j = 0; j < objects[i].images.id_list.length; j++) {
-                    objects[i].images.id_list[j] = "mobile_" + objects[i].images.id_list[j]
-                }*/
-                objects[i].img_srcs = await GetData(API_LINK+"/src/img",{id_list:objects[i].images.id_list},"post")
-                for(var j = 0; j < objects[i].img_srcs.length; j++) {
-                    objects[i].img_srcs[j] = {
-                        description:objects[i].img_srcs[j].id,
-                        url:objects[i].img_srcs[j].data
-                    }
+        var objectImagesFlags = {}
+        for (var i = 0; i < objects.length; i++) {
+            var urls = []
+            for(var j = 0; j < objects[i].images.id_list.length; j++) {
+                urls.push({url:API_LINK+"/sources/image/"+objects[i].images.id_list[j]})
+                if(!objectImagesFlags[API_LINK+"/sources/image/"+objects[i].images.id_list[j]]) {
+                    objectImagesFlags[API_LINK+"/sources/image/"+objects[i].images.id_list[j]] = false
                 }
+            }
+            if(!this.state.objectsImagesLoaded){
                 this.setState({
-                    objects: objects
+                    objectsImagesLoaded: objectImagesFlags
                 })
             }
-        } else {
-            for (var i = 0; i < objects.length; i++) {
-                objects[i].img_srcs = await GetData(API_LINK+"/src/img",{id_list:objects[i].images.id_list},"post")
-                for(var j = 0; j < objects[i].img_srcs.length; j++) {
-                    objects[i].img_srcs[j] = {
-                        description:objects[i].img_srcs[j].id,
-                        url:objects[i].img_srcs[j].data
-                    }
-                }
-            }
+            objects[i].img_srcs = urls
             this.setState({
                 objects: objects
             })
         }
     }
-
+    handleScroll = (e) => {
+        if(!e){
+            return
+        }
+        //console.log(e.target.scrollingElement.scrollTop, e.target.scrollingElement)
+        if(e.target.scrollingElement.scrollTop === 0) {
+            this.setState({
+                scrollDirection: "up"
+            })
+        } else {
+            this.setState({
+                scrollDirection: "down"
+            })
+        }
+    }
 
     render() {
+        window.addEventListener("scroll", this.handleScroll);
         if(this.state.objects.length === 0) {
             return (
                 <div>
@@ -85,6 +87,7 @@ class Objects extends React.Component {
         }
         return (
             <div className="page" style={{overflow: this.state.menuOpen ? "hidden" : "auto"}}>
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})} scrollDirection={this.state.scrollDirection}/>
                 <div className="modal" style={{
                     background: "rgba(0, 0, 0, 0.5)",
                     position: "fixed",
@@ -101,7 +104,6 @@ class Objects extends React.Component {
                 >
                     <img src={this.state.modalImage} alt=""/>
                 </div>
-                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})} />
                 <div className="content">
                     <div className="block-1">
                         <div className="block-header">
@@ -130,71 +132,58 @@ class Objects extends React.Component {
                                         this.state.objects.map((object)=>{
 
                                             return <div className="object">
-                                                <div>
-                                                    { object.img_srcs ?
-                                                        <Swiper
+                                                <Swiper
+                                                    allowTouchMove={false}
+                                                    // install Swiper modules
+                                                    modules={[Navigation]}
+                                                    navigation={true}
+                                                    width={this.isMobile() ? 400 : 600}
+                                                    height={400}
+                                                    style={{
+                                                        borderRadius: "40px",
+                                                        userSelect: "none",
+                                                    }}
+                                                    onTouchMove={(e) => e.stopPropagation()}
 
-                                                            // install Swiper modules
-                                                            modules={[Navigation, Pagination, Scrollbar, A11y]}
-                                                            navigation={(!this.isMobile())}
-                                                            spaceBetween={1}
-                                                            slidesPerView={1}
-                                                            pagination={{ clickable: true }}
-                                                            onSlideChange={() => console.log('slide change')}
-                                                            width={600}
-                                                            height={600}
-                                                            style={{
-                                                                borderRadius: "40px"
-                                                            }}
-                                                        >
-                                                            {
-                                                                object.img_srcs.map((item, index) => (
-                                                                    <SwiperSlide><img src={item.url} alt="" onClick={() => this.setState({modalImage: item.url,modalOpen: true})}/></SwiperSlide>
-                                                                ))
-                                                            }
-                                                        </Swiper> :<div style={{
-                                                            width: "100%",
-                                                            height: this.isMobile() ? "300px" : "400px",
-                                                            display: "flex",
-                                                            justifyContent: "center",
-                                                            alignItems: "center"
-                                                        }}>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style={{
-                                                                width: "20%",
-                                                                height: "20%",
-                                                            }}>
-                                                                <circle cx="4" cy="12" r="0" fill="currentColor">
-                                                                    <animate fill="freeze" attributeName="r" begin="0;svgSpinners3DotsMove1.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="0;3"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove7.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="4;12"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove5.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="12;20"/>
-                                                                    <animate id="svgSpinners3DotsMove0" fill="freeze" attributeName="r" begin="svgSpinners3DotsMove3.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="3;0"/>
-                                                                    <animate id="svgSpinners3DotsMove1" fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove0.end" dur="0.001s" values="20;4"/>
-                                                                </circle>
-                                                                <circle cx="4" cy="12" r="3" fill="currentColor">
-                                                                    <animate fill="freeze" attributeName="cx" begin="0;svgSpinners3DotsMove1.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="4;12"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove7.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="12;20"/>
-                                                                    <animate id="svgSpinners3DotsMove2" fill="freeze" attributeName="r" begin="svgSpinners3DotsMove5.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="3;0"/>
-                                                                    <animate id="svgSpinners3DotsMove3" fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove2.end" dur="0.001s" values="20;4"/>
-                                                                    <animate fill="freeze" attributeName="r" begin="svgSpinners3DotsMove3.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="0;3"/>
-                                                                </circle>
-                                                                <circle cx="12" cy="12" r="3" fill="currentColor">
-                                                                    <animate fill="freeze" attributeName="cx" begin="0;svgSpinners3DotsMove1.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="12;20"/>
-                                                                    <animate id="svgSpinners3DotsMove4" fill="freeze" attributeName="r" begin="svgSpinners3DotsMove7.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="3;0"/>
-                                                                    <animate id="svgSpinners3DotsMove5" fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove4.end" dur="0.001s" values="20;4"/>
-                                                                    <animate fill="freeze" attributeName="r" begin="svgSpinners3DotsMove5.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="0;3"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove3.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="4;12"/>
-                                                                </circle>
-                                                                <circle cx="20" cy="12" r="3" fill="currentColor">
-                                                                    <animate id="svgSpinners3DotsMove6" fill="freeze" attributeName="r" begin="0;svgSpinners3DotsMove1.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="3;0"/>
-                                                                    <animate id="svgSpinners3DotsMove7" fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove6.end" dur="0.001s" values="20;4"/>
-                                                                    <animate fill="freeze" attributeName="r" begin="svgSpinners3DotsMove7.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="0;3"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove5.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="4;12"/>
-                                                                    <animate fill="freeze" attributeName="cx" begin="svgSpinners3DotsMove3.end" calcMode="spline" dur="0.5s" keySplines=".36,.6,.31,1" values="12;20"/>
-                                                                </circle>
-                                                            </svg>
-                                                        </div>
+                                                >
+                                                    {
+                                                        object.img_srcs.map((item, index) => (
+
+                                                            <SwiperSlide style={{userSelect: "none",userDrag: "none"}}>
+                                                                <img
+                                                                    src={item.url}
+                                                                    style={{
+                                                                        userSelect: "none",
+                                                                        display: "block",
+                                                                        opacity: this.state.objectsImagesLoaded[item.url] ? "1" : "0",
+                                                                        transition: "0.5s ease-in-out",
+                                                                    }}
+                                                                    alt=""
+                                                                    onClick={() => this.setState({modalImage: item.url,modalOpen: true})}
+                                                                    onLoad={(e) => {
+                                                                        var newObjectsImagesFlags = this.state.objectsImagesLoaded
+                                                                        newObjectsImagesFlags[item.url] = true
+                                                                        this.setState({objectsImagesLoaded: newObjectsImagesFlags})
+                                                                    }}
+                                                                />
+                                                                {
+                                                                    this.state.objectsImagesLoaded[item.url] ? <></> :
+                                                                        <div style={{
+                                                                            width: "100%",
+                                                                            height: this.isMobile() ? "400px" : "400px",
+                                                                            display: "flex",
+                                                                            justifyContent: "center",
+                                                                            alignItems: "center",
+                                                                        }}>
+
+                                                                        </div>
+
+                                                                }
+
+                                                            </SwiperSlide>
+                                                        ))
                                                     }
-                                                </div>
+                                                </Swiper>
                                                 <div className="object-data">
                                                     <div className="section">
                                                         <span className="object-name">{object.name}</span>

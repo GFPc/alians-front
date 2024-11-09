@@ -26,7 +26,8 @@ class ObjectPage extends React.Component {
             modalImageUrl: "",
             modalOpen: false,
             dataReceived: false,
-            menuOpen: false
+            menuOpen: false,
+            scrollDirection: "",
         }
     }
 
@@ -50,14 +51,13 @@ class ObjectPage extends React.Component {
             contacts: object.contacts,
             description: object.description
         })
-        object.img_srcs = await GetData(API_LINK+"/src/img",{id_list:object.images.id_list},"post")
-        var images = object.img_srcs
-        for(var i = 0; i < images.length; i++){
-            images[i] = {
-                url: images[i].data,
-                title: images[i].id
+        var urls = []
+        for(var i = 0; i < object.images.id_list.length; i++){
+            if(!urls.includes(object.images.id_list[i])){
+                urls.push({url:API_LINK+"/sources/image/"+object.images.id_list[i]})
             }
         }
+        object.img_srcs = urls
         return object
     }
     isMobile() {
@@ -65,9 +65,25 @@ class ObjectPage extends React.Component {
             return true
         }
     }
+    handleScroll = (e) => {
+        if(!e){
+            return
+        }
+        //console.log(e.target.scrollingElement.scrollTop, e.target.scrollingElement)
+        if(e.target.scrollingElement.scrollTop === 0) {
+            this.setState({
+                scrollDirection: "up"
+            })
+        } else {
+            this.setState({
+                scrollDirection: "down"
+            })
+        }
+    }
 
     render() {
-        console.log(this.isMobile() ? "mobile" : "desktop")
+        window.addEventListener("scroll", this.handleScroll);
+
         if(!this.state.dataReceived || this.state.images.length === 0) {
             return (
                 <div className="loader">
@@ -110,7 +126,7 @@ class ObjectPage extends React.Component {
                     </div>
                     <div className="modal-close" onClick={() => this.setState({modalOpen: false})}>X</div>
                 </div>
-                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})}/>
+                <Header menuOpen={this.state.menuOpen} setMenuOpen={() => this.setState({menuOpen: !this.state.menuOpen})} scrollDirection={this.state.scrollDirection}/>
                 <div className="content">
                     <div className="block-6">
                         <div className="container">
@@ -124,15 +140,26 @@ class ObjectPage extends React.Component {
                                         onSwiper={(swiper) => console.log(swiper)}
                                         onSlideChange={() => console.log('slide change')}
                                         width={this.isMobile() ? 300 : 600}
-                                        height={this.isMobile() ? 300 : 600}
+                                        height={this.isMobile() ? 200 : 400}
                                         style={{
                                             borderRadius: "40px",
                                             maxWidth: "600px"
                                         }}
                                     >
+
                                         {
                                             this.state.images.map((item, index) => (
-                                                <SwiperSlide style={{width: "800px", height: "400px"}} onClick={ () => this.setState({modalImageUrl: item.url,modalOpen: true})}><img src={item.url} alt="" onClick={() => this.setState({modalImage: item.url,modalOpen: true})}/></SwiperSlide>
+                                                <SwiperSlide
+                                                    style={{width: "800px", height: "400px"}}
+                                                    onClick={ () => this.setState({modalImageUrl: item.url,modalOpen: true})}
+                                                >
+                                                    {console.log(item)}
+                                                    <img
+                                                        src={item.url}
+                                                        alt=""
+                                                        onClick={() => this.setState({modalImage: item.url,modalOpen: true})}
+                                                    />
+                                                </SwiperSlide>
                                             ))
                                         }
                                     </Swiper> :

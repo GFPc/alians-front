@@ -6,11 +6,12 @@ import Dots from "./components/Controls/Dots";
 
 export const SliderContext = createContext(undefined);
 
-const CustomSlider = function ({ children, items,dotsVisible = true}) {
+const CustomSlider = function ({ children, items,dotsVisible = true,slideMaxWidth="100%"}) {
     items = children
     const [slide, setSlide] = useState(0);
     const [sw_effect, setSwEffect] = useState(0);
     const [direction, setDirection] = useState(0);
+    const [transition, setTransition] = useState(0);
 
     const [touchPosition, setTouchPosition] = useState(null)
 
@@ -37,6 +38,7 @@ const CustomSlider = function ({ children, items,dotsVisible = true}) {
         const touchDown = e.touches[0].clientX;
 
         setTouchPosition(touchDown);
+        setTransition(0)
         //console.log("touch start")
     }
     const handleTouchEnd = (e) => {
@@ -51,15 +53,18 @@ const CustomSlider = function ({ children, items,dotsVisible = true}) {
             changeSlide(-1);
         }
         setTouchPosition(null);
+        setTransition(0.3)
         //console.log("touch end")
     }
 
     const handleTouchMove = (e) => {
         if(items.length===1) return
         //console.log("touch move")
+        if(!e.touches) return
         const currentPosition = e.touches[0].clientX;
+
         setDirection(touchPosition - currentPosition)
-        setSwEffect(direction/10 % 100)
+        setSwEffect(direction*60/window.innerWidth)
         //console.log(direction,touchPosition,currentPosition)
     }
     return (
@@ -83,7 +88,7 @@ const CustomSlider = function ({ children, items,dotsVisible = true}) {
 
                 <div
                     className="slide-list"
-                    style={{ transform: `translateX(-${slide * 100 + sw_effect}%)`,transition: "transform 0.5s ease-in-out" }}
+                    style={{maxWidth: slideMaxWidth, transform: `translateX(-${slide * 100 + sw_effect}%)`,transition: "transform " + transition + "s ease-in-out" }}
                 >
                     {
                         children.length !== 0 ?
