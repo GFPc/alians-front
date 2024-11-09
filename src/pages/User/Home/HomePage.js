@@ -286,6 +286,7 @@ class HomePage extends React.Component {
                                                  style={{display: "flex",
                                                      justifyContent: "center",
                                                      alignItems: "center",
+                                                     maxWidth: this.isMobile() ? "300px" : "600px",
                                                  }}
                                             >
                                                 <Swiper
@@ -302,7 +303,6 @@ class HomePage extends React.Component {
 
                                                     style={{
                                                         borderRadius: this.isMobile() ? "10px" : "40px",
-
                                                     }}
                                                 >
                                                     {
