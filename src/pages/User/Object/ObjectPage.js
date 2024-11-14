@@ -4,7 +4,6 @@ import Header from "../../../components/Header/Header";
 import {API_LINK, GetData} from "../../../tools/api";
 import Footer from "../../../components/Footer/Footer";
 import "./ObjectPageStyle_0.css"
-import "./ObjectPageStyle_1_adaptive.css"
 import {Swiper, SwiperSlide} from "swiper/react";
 import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
 import ImageViewer from 'react-simple-image-viewer';

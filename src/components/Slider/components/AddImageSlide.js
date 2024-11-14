@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import SlideTitle from "./SlideTitle";
 import SlideImage from "./SlideImage";
 
 import "./../styles.scss";
