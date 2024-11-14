@@ -243,8 +243,6 @@ class HomePage extends React.Component {
                                                                 !object.specifications || object.specifications.length === 0 ? null :
                                                                     object.specifications.map( (feature) => <span className="object-feature">{feature}</span> )
                                                             }
-
-
                                                             <div className="look-btn" onClick={() => window.location.href = "/object/"+object.id}>
                                                                 <span>Посмотреть</span>
                                                             </div>
@@ -334,7 +332,6 @@ class HomePage extends React.Component {
                                                                             justifyContent: "center",
                                                                             alignItems: "center",
                                                                         }}>
-
                                                                         </div>
                                                                 }
                                                             </SwiperSlide>
