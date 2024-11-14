@@ -8,7 +8,7 @@ const link_News = "/news"
 const link_Contacts = "/#contacts"
 
 const isMobile = () => {
-    return window.innerWidth < 768
+    return window.innerWidth <= 768
 }
 const Header = ({menuOpen, setMenuOpen,scrollDirection}) => {
     return (
@@ -144,7 +144,7 @@ const Header = ({menuOpen, setMenuOpen,scrollDirection}) => {
 
                 }} >Контакты</a>
             </div>
-            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)} style={{ display: isMobile() ? "block" : "none" }}>
+            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M3 18H21" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M3 6H21" stroke="#323232" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

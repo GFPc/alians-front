@@ -43,28 +43,29 @@ const CustomSlider = function ({ children, items,dotsVisible = true,slideMaxWidt
     }
     const handleTouchEnd = (e) => {
         setSwEffect(0)
-        if (direction > 100) {
+        setTouchPosition(null);
+        setTransition(0.3)
+        if (direction > 80) {
             //console.log("right")
             changeSlide(1);
         }
 
-        if (direction < -100 ) {
+        if (direction < -80 ) {
             //console.log("left")
             changeSlide(-1);
         }
-        setTouchPosition(null);
-        setTransition(0.3)
+
         //console.log("touch end")
     }
 
     const handleTouchMove = (e) => {
         if(items.length===1) return
-        //console.log("touch move")
+
         if(!e.touches) return
         const currentPosition = e.touches[0].clientX;
 
         setDirection(touchPosition - currentPosition)
-        setSwEffect(direction*60/window.innerWidth)
+        setSwEffect(direction*100/window.innerWidth)
         //console.log(direction,touchPosition,currentPosition)
     }
     return (
@@ -88,7 +89,11 @@ const CustomSlider = function ({ children, items,dotsVisible = true,slideMaxWidt
 
                 <div
                     className="slide-list"
-                    style={{maxWidth: slideMaxWidth, transform: `translateX(-${slide * 100 + sw_effect}%)`,transition: "transform " + transition + "s ease-in-out" }}
+                    style={{
+                        maxWidth: slideMaxWidth,
+                        transform: `translateX(-${slide * 100}%)`,
+                        transition: "transform " + transition + "s ease-in-out",
+                    }}
                 >
                     {
                         children.length !== 0 ?

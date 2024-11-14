@@ -1,7 +1,18 @@
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .header .header-block a{
         display: none;
     }
+    .header .menu-icon{
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    .header .menu-icon{
+        display: none;
+    }
+}
+@media (max-width: 900px) {
+
     .content .block-0 .about{
         display: inline-block;
     }

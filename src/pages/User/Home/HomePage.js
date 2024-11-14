@@ -179,7 +179,9 @@ class HomePage extends React.Component {
                                 {
                                     this.state.objects.map((object) => {
                                         return (
-                                            <div className="block-last-commercial-objects-item">
+                                            <div className="block-last-commercial-objects-item" style={{
+                                                maxWidth: "640px",
+                                            }}>
                                                 <div className="object">
                                                     <Swiper
                                                         allowTouchMove={false}
@@ -187,7 +189,7 @@ class HomePage extends React.Component {
                                                         modules={[Navigation]}
                                                         navigation={true}
                                                         width={this.isMobile() ? 400 : 600}
-                                                        height={600}
+                                                        height={400}
                                                         style={{
                                                             borderRadius: "40px",
                                                             userSelect: "none",
@@ -219,7 +221,7 @@ class HomePage extends React.Component {
                                                                         this.state.objectsImagesLoaded[item.url] ? <></> :
                                                                             <div style={{
                                                                                 width: "100%",
-                                                                                height: this.isMobile() ? "300px" : "400px",
+                                                                                height: "0px",
                                                                                 display: "flex",
                                                                                 justifyContent: "center",
                                                                                 alignItems: "center",
@@ -291,16 +293,13 @@ class HomePage extends React.Component {
                                             >
                                                 <Swiper
 
+                                                    allowTouchMove={false}
                                                     // install Swiper modules
-                                                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                                                    modules={[Navigation]}
                                                     navigation={true}
-                                                    spaceBetween={1}
-                                                    slidesPerView={1}
-                                                    pagination={{ clickable: true }}
-                                                    onSlideChange={() => console.log('slide change')}
-                                                    width={ this.isMobile() ? 300 : 600}
-
-
+                                                    width={this.isMobile() ? 400 : 600}
+                                                    height={400}
+                                                    onTouchMove={(e) => e.stopPropagation()}
                                                     style={{
                                                         borderRadius: this.isMobile() ? "10px" : "40px",
                                                     }}

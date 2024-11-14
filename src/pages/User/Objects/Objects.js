@@ -131,7 +131,9 @@ class Objects extends React.Component {
                                         </div> :
                                         this.state.objects.map((object)=>{
 
-                                            return <div className="object">
+                                            return <div className="object" style={{
+                                                maxWidth: this.isMobile() ? "400px" : "600px",
+                                            }}>
                                                 <Swiper
                                                     allowTouchMove={false}
                                                     // install Swiper modules
@@ -170,7 +172,7 @@ class Objects extends React.Component {
                                                                     this.state.objectsImagesLoaded[item.url] ? <></> :
                                                                         <div style={{
                                                                             width: "100%",
-                                                                            height: this.isMobile() ? "400px" : "400px",
+                                                                            height: "0",
                                                                             display: "flex",
                                                                             justifyContent: "center",
                                                                             alignItems: "center",
