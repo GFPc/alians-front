@@ -111,6 +111,7 @@ class NewsPage extends React.Component{
                                                  style={{display: "flex",
                                                      justifyContent: "center",
                                                      alignItems: "center",
+
                                                  }}
                                             >
                                                 <Swiper
@@ -127,7 +128,7 @@ class NewsPage extends React.Component{
 
                                                     style={{
                                                         borderRadius: this.isMobile() ? "10px" : "40px",
-
+                                                        maxWidth:this.isMobile() ? "300px" : "600px",
                                                     }}
                                                 >
                                                     {

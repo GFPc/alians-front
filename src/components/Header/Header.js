@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import {API_LINK, GetData} from "../../tools/api";
 
 const link_About = "/"
-const link_Objects = "/objects"
+const link_Objects = "/objects/commercial"
 const link_Object = "/object/"
 const link_News = "/news"
 const link_Contacts = "/#contacts"
