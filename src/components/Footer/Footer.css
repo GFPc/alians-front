@@ -13,7 +13,7 @@
 .footer .column-last{
     float: right;
     margin-left: auto;
-    margin-right: 20%;
+    margin-right: auto;
 }
 .footer .column span{
     font-family: 'Circe-Regular', serif;
@@ -58,12 +58,5 @@
     }
     100% {
         box-shadow: 0 0 0 2px #343434;
-    }
-}
-@media (max-width: 900px) {
-    .footer .column-last{
-        float: right;
-        margin-left: auto;
-        margin-right: auto;
     }
 }

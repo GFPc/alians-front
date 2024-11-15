@@ -102,10 +102,19 @@
     opacity: 0.9;
     user-select: none;
     z-index: 3;
+    overflow-y: auto;
 }
 .header .menu-screen .top{
     display: flex;
     align-items: center;
+    background: #081b46;
+}
+.header .menu-screen .middle{
+    overflow-y: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 .header .menu-screen .top .logo{
     padding: 7px;
@@ -120,29 +129,34 @@
     margin-right: 10px;
 }
 
-.header .menu-screen .group{
-    display: flex;
-    align-items: center;
+.header .menu-screen .line{
+    background: rgba(190, 190, 190, 0.1);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
-.header .menu-screen .sub-group{
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
+.header .menu-screen .line-content{
+    display: block;
 }
-.header .menu-screen .group a{
+.header .menu-screen .line .line-header{
+    display: flex;
+    padding: 10px;
+}
+.header .menu-screen .line .line-header .fold-icon{
+    margin-left: 30px;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.header .menu-screen .line .text a{
     font-family: 'Circe-Regular', serif;
     font-size: 18px;
     text-decoration: none;
     color: white;
     padding-bottom: 1px;
 }
-.header .menu-screen .middle{
-    height: calc(100% - 154px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-}
+
 .header .menu-screen .bottom{
     display: flex;
     align-items: center;
